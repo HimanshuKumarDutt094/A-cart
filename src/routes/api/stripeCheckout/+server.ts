@@ -31,8 +31,8 @@ export const POST: RequestHandler = async ({ request }) => {
 	const session = await stripe.checkout.sessions.create({
 		line_items: lineItems,
 		mode: 'payment',
-		success_url: 'http://localhost:5173/success',
-		cancel_url: 'http://localhost:5173/cancel'
+		success_url: '../A-cart/src/routes/success',
+		cancel_url: '../A-cart/src/routes/cancel'
 	});
 
 	return new Response(
