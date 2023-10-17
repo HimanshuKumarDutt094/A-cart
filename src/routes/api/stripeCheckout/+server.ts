@@ -4,7 +4,7 @@ import Stripe from 'stripe';
 const SECRET_STRIPE_KEY =
 	'sk_test_51O1sP8SJYhchu2C3QmXgRdnDp1IwSfyKDxIApwFcJVhjf42XhSmTu6eGRVZjXwduQJERyvj80zxIOHaeJd5StNu000Cgg2aHH3';
 const stripe = new Stripe(SECRET_STRIPE_KEY, {
-	apiVersion: '2022-11-15'
+	apiVersion: '2023-08-16'
 });
 
 // localhost:5173/api/stripeCheckout
@@ -31,8 +31,8 @@ export const POST: RequestHandler = async ({ request }) => {
 	const session = await stripe.checkout.sessions.create({
 		line_items: lineItems,
 		mode: 'payment',
-		success_url: '../A-cart/src/routes/success',
-		cancel_url: '../A-cart/src/routes/cancel'
+		success_url: 'https://anything-cart.vercel.app/success',
+		cancel_url: 'https://anything-cart.vercel.app/cancel'
 	});
 
 	return new Response(
