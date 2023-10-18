@@ -6,12 +6,28 @@
         <slot name="head" />
         <style>
             body {
+                -webkit-background-clip: text;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+            body {
                 overflow: hidden;
             }
             .scrollable {
                 overflow: auto;
                 height: 100vh;
+                -ms-overflow-style: none; /* IE and Edge */
+                scrollbar-width: none; /* Firefox */
             }
+
+
+  .scrollable::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
         </style>
     </head>
     <body>
